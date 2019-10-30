@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2019-10-30T15:20:59" hostname="drvk" time="0.006">
+  <properties/>
+  <testcase name="topScorersCorrectAmount" classname="ohtuesimerkki.StatisticsTest" time="0.003"/>
+  <testcase name="teamA2" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <testcase name="searchName" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="searchGoals" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <testcase name="searchUnexistingPlayer" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="teamA" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="topScorers2" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="nonExistingTeam" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="topScorers" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
