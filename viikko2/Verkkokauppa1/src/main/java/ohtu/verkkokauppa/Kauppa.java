@@ -1,5 +1,7 @@
 package ohtu.verkkokauppa;
 
+import java.util.ArrayList;
+
 public class Kauppa {
 
     private Sailova varasto;
@@ -38,5 +40,4 @@ public class Kauppa {
         
         return pankki.tilisiirto(nimi, viite, tiliNumero, kaupanTili, summa);
     }
-
 }
