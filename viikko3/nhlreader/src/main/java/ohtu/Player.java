@@ -68,7 +68,19 @@ public class Player {
 
     @Override
     public String toString() {
-        return name + " team " + team + " goals " + goals + " assists " + assists;
+        return padRight(name, 20) + padRight(nationality, 6) + 
+                padRight(Integer.toString(goals), 2) + " + " +
+                padLeft(Integer.toString(assists), 2) + " = " +
+                padLeft(Integer.toString(goals + assists), 2);
     }
+    
+    private String padRight(String s, int n) {
+        return String.format("%-" + n + "s", s);  
+    }
+    
+    private  String padLeft(String s, int n) {
+        return String.format("%" + n + "s", s);  
+    }
+
       
 }
