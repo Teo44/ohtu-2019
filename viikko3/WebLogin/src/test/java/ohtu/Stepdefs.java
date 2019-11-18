@@ -30,6 +30,19 @@ public class Stepdefs {
         element.click();
     }
     
+    @Given("user with username {string} and with password {string} is successfully created")
+    public void userWithUsernameAndWithPasswordIsSuccessfullyCreated(String username, String password) {
+        newUserIsSelected();
+        registerWith(username, password, password);
+    }
+    
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void userWithUsernameAndPasswordIsTriedToBeCreated(String username, String password) {
+        newUserIsSelected();
+        registerWith(username, password, password);
+    }
+
+    
     @When("a valid username {string} and password {string} and matching password confirmation are entered")
     public void validUsernameAndPasswordAndConfirmationAreGiven(String username, String password)    {
         registerWith(username, password, password);
@@ -58,6 +71,16 @@ public class Stepdefs {
     @When("a valid username {string} and password {string} and a mismatched password confirmation {string} are entered")
     public void validUserNameAndMismatchedPasswordConfirmationAreGiven(String username, String password, String passwordConfirmation)   {
         registerWith(username, password, passwordConfirmation);
+    }
+    
+    @When("a valid username {string} and password {string} are entered")
+    public void aValidUsernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
+    }
+    
+    @When("invalid username {string} and password {string} are entered")
+    public void invalidUsernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
     }
     
     @Then("user is logged in")
@@ -94,6 +117,12 @@ public class Stepdefs {
     @Then("user is not created and error {string} is reported")
     public void registeringFailsWithError(String errormessage)    {
         pageHasContent("Create username and give password");
+        pageHasContent(errormessage);
+    }
+    
+    @Then("user is not logged in and error {string} is given")
+    public void userIsNotLoggedInAndErrorIsGiven(String errormessage) {
+        pageHasContent("Give your credentials to login");
         pageHasContent(errormessage);
     }
     
