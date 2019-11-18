@@ -28,6 +28,11 @@ public class Stepdefs {
         logInWith(username, password);
     }    
     
+    @When("nonexistant username {string} and password {string} are given")
+    public void nonExistantUsernameAndPasswordAreGiven(String username, String password) {
+        logInWith(username, password);
+    }
+    
     @Then("user is logged in")
     public void userIsLoggedIn() {
         pageHasContent("Ohtu Application main page");
