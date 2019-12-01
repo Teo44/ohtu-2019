@@ -6,6 +6,7 @@ import javax.swing.JTextField;
 public class Summa extends Command {
     public Summa(JTextField syotekentta, JTextField tuloskentta, JButton nollaa, JButton undo)    {
         super(syotekentta, tuloskentta, nollaa, undo);
+        previous = "";
     }
     
     @Override
@@ -17,7 +18,7 @@ public class Summa extends Command {
         }
         sovellus.plus(arvo);
         int laskunTulos = sovellus.tulos();
-        
+        previous = tuloskentta.getText();
         syotekentta.setText(""); 
         tuloskentta.setText("" + laskunTulos);
         if ( laskunTulos==0) {
@@ -30,7 +31,7 @@ public class Summa extends Command {
     
     @Override
     public void peru()  {
-        
+        tuloskentta.setText(previous);
     }
     
 }

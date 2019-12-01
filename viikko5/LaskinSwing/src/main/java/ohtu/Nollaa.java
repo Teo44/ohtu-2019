@@ -13,7 +13,7 @@ public class Nollaa extends Command{
         sovellus.nollaa();
         
         int laskunTulos = sovellus.tulos();
-         
+        previous = tuloskentta.getText();
         syotekentta.setText(""); 
         tuloskentta.setText("" + laskunTulos);
         if ( laskunTulos==0) {
@@ -26,7 +26,7 @@ public class Nollaa extends Command{
     
     @Override
     public void peru()  {
-        
+        tuloskentta.setText(previous);
     }
     
 }

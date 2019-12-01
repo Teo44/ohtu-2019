@@ -18,7 +18,7 @@ public class Erotus extends Command{
         sovellus.miinus(arvo);
         
         int laskunTulos = sovellus.tulos();
-        
+        previous = tuloskentta.getText();
         syotekentta.setText(""); 
         tuloskentta.setText("" + laskunTulos);
         if ( laskunTulos==0) {
@@ -31,7 +31,7 @@ public class Erotus extends Command{
     
     @Override
     public void peru()  {
-        
+        tuloskentta.setText(previous);
     }
     
 }
