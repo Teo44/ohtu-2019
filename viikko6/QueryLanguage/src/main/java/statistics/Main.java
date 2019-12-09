@@ -7,7 +7,7 @@ public class Main {
         // seuraavassa osoitteessa 27.11.2019 päivitetyt tilastot
         String url = "https://nhl27112019.herokuapp.com/players.txt";
         // ajan tasalla olevat tilastot osoitteessa
-        // "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
+//         "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
 
         Statistics stats = new Statistics(new PlayerReaderImpl(url));
           
@@ -30,14 +30,32 @@ public class Main {
 //                            new HasAtLeast(20, "assists")
 //        );   
 
-        Matcher m = new And(
-            new HasAtLeast(20, "points"),
-            new Or( 
-                new PlaysIn("NYR"),
-                new PlaysIn("NYI"),
-                new PlaysIn("NJD")
-            )
-        ); 
+//        Matcher m = new And(
+//            new HasAtLeast(20, "points"),
+//            new Or( 
+//                new PlaysIn("NYR"),
+//                new PlaysIn("NYI"),
+//                new PlaysIn("NJD")
+//            )
+//        ); 
+
+        QueryBuilder query = new QueryBuilder();
+        
+//        Matcher m = query.build();  
+
+        Matcher m3 = query.playsIn("NYR")
+                         .hasAtLeast(5, "goals")
+                         .hasFewerThan(10, "goals").build();
+
+        Matcher m1 = query.playsIn("PHI")
+                  .hasAtLeast(10, "assists")
+                  .hasFewerThan(8, "goals").build();
+
+        Matcher m2 = query.playsIn("EDM")
+                  .hasAtLeast(20, "points").build();
+
+        Matcher m = query.oneOf(m1, m2).build();
+
 
 
         
