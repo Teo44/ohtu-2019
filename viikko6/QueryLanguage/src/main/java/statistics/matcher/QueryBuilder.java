@@ -10,7 +10,9 @@ public class QueryBuilder {
     }
     
     public Matcher build()  {
-        return m;
+        Matcher m2 = this.m;
+        this.m = new All();
+        return m2;
     }
     
     public QueryBuilder playsIn(String team)   {
